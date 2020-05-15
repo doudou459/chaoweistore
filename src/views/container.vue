@@ -57,8 +57,9 @@ export default {
     }
   },
   created(){
-
-     
+      this.titleName=this.$store.state.menus[0].name;
+      this.router=this.$store.state.menus[0].router;  
+      this.$router.push(this.router);
   }
 }
 </script>

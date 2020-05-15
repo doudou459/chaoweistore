@@ -50,19 +50,6 @@ export default {
             type: "error"
           });    
             }
-        
-        } else if (res.data.errno == "501") {
-          me.$message({
-            showClose: true,
-            message: res.data.errmsg,
-            type: "error"
-          });
-        } else if (res.data.errno == "502") {
-          me.$message({
-            showClose: true,
-            message: res.data.errmsg,
-            type: "error"
-          });
         } else {
           console.log(res.data.errmsg);
         }
@@ -89,18 +76,6 @@ export default {
         if (res.data.errno == "200") {
           me.editContent=res.data.data;
           me.showEditor = true;
-        } else if (res.data.errno == "501") {
-          me.$message({
-            showClose: true,
-            message: res.data.errmsg,
-            type: "error"
-          });
-        } else if (res.data.errno == "502") {
-          me.$message({
-            showClose: true,
-            message: res.data.errmsg,
-            type: "error"
-          });
         } else {
           console.log(res.data.errmsg);
         }
@@ -116,7 +91,7 @@ export default {
 
 }
 </script>
-<style>
+<style scoped>
 .editorContent{
     margin-left: auto;
     margin-right: auto;

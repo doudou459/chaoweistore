@@ -109,18 +109,6 @@ export default {
                 type: "error"
               });
             }
-          } else if (res.data.errno == "501") {
-            me.$message({
-              showClose: true,
-              message: res.data.errmsg,
-              type: "error"
-            });
-          } else if (res.data.errno == "502") {
-            me.$message({
-              showClose: true,
-              message: res.data.errmsg,
-              type: "error"
-            });
           } else {
             console.log(res.data.errmsg);
           }
@@ -154,18 +142,6 @@ export default {
           me.wechatConfig.wxAppidMin = res.data.data.wxAppidMin;
           me.wechatConfig.wxAppsecreyMin = res.data.data.wxAppsecreyMin;
           me.showMap=true;
-        } else if (res.data.errno == "501") {
-          me.$message({
-            showClose: true,
-            message: res.data.errmsg,
-            type: "error"
-          });
-        } else if (res.data.errno == "502") {
-          me.$message({
-            showClose: true,
-            message: res.data.errmsg,
-            type: "error"
-          });
         } else {
           console.log(res.data.errmsg);
         }

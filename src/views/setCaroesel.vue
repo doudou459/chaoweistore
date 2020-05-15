@@ -1,6 +1,7 @@
 <template>
       <div>
         <div class="contentDiv">
+          <div class="btnDiv">
           <el-row type="flex">
             <el-col :span="4">
               <el-button @click="addData" type="primary">新增</el-button>
@@ -8,6 +9,7 @@
               <el-button @click="saveData" type="info">保存</el-button>
             </el-col>
           </el-row>
+             </div>
           <el-drawer size="40%" :show-close="false" :visible.sync="drawer" :with-header="false">
             <editor
               v-if="drawer"
@@ -104,18 +106,6 @@ export default {
             type: "success"           
           })
           me.carouselData.acceptChanges();
-        } else if (res.data.errno == "501") {
-          me.$message({
-            showClose: true,
-            message: res.data.errmsg,
-            type: "error"
-          });
-        } else if (res.data.errno == "502") {
-          me.$message({
-            showClose: true,
-            message: res.data.errmsg,
-            type: "error"
-          });
         } else {
             me.$message({
             showClose: true,
@@ -187,18 +177,6 @@ export default {
            if(res.data.data.length>0){
                me.carouselData.loadData(res.data.data);
            }
-        } else if (res.data.errno == "501") {
-          me.$message({
-            showClose: true,
-            message: res.data.errmsg,
-            type: "error"
-          });
-        } else if (res.data.errno == "502") {
-          me.$message({
-            showClose: true,
-            message: res.data.errmsg,
-            type: "error"
-          });
         } else {
           console.log(res.data.errmsg);
         }
@@ -213,7 +191,7 @@ export default {
     }
 }
 </script>
-<style>
+<style scoped>
 .deleteBtn {
   margin-left: 10px;
   color: red !important;
@@ -239,19 +217,23 @@ export default {
   margin-top: 10px;
 }
 .contentDiv{
-    padding:15px;
+    padding:15px 0px;
 }
 .carouselDiv{
     box-shadow: 0px 0px 5px 5px rgb(20, 20, 20, 0.5);
     margin-left: auto;
     margin-right: auto;
+    margin-top:15px;
     width: 1000px;
     padding:15px;
-    min-height:600px;
 }
 .itemBtnRow{
     text-align: left;
 }
-
-
+.btnDiv {
+  padding-bottom: 15px;
+  border-bottom-color: cadetblue;
+  border-bottom-style: inset;
+  border-bottom-width: 3px;
+}
 </style>

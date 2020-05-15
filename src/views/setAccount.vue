@@ -80,18 +80,6 @@ export default {
           me.roles.loadData(res.data.data);
           me.roles.deleteByID("1");
           }
-        } else if (res.data.errno == "501") {
-          me.$message({
-            showClose: true,
-            message: res.data.errmsg,
-            type: "error"
-          });
-        } else if (res.data.errno == "502") {
-          me.$message({
-            showClose: true,
-            message: res.data.errmsg,
-            type: "error"
-          });
         } else {
           console.log(res.data.errmsg);
         }
@@ -116,18 +104,6 @@ export default {
           if(res.data.data.length>0){
             me.admins.loadData(res.data.data);
           }       
-        } else if (res.data.errno == "501") {
-          me.$message({
-            showClose: true,
-            message: res.data.errmsg,
-            type: "error"
-          });
-        } else if (res.data.errno == "502") {
-          me.$message({
-            showClose: true,
-            message: res.data.errmsg,
-            type: "error"
-          });
         } else {
           console.log(res.data.errmsg);
         }
@@ -247,18 +223,6 @@ export default {
             type: "success"           
           })
           me.admins.acceptChanges();
-        } else if (res.data.errno == "501") {
-          me.$message({
-            showClose: true,
-            message: res.data.errmsg,
-            type: "error"
-          });
-        } else if (res.data.errno == "502") {
-          me.$message({
-            showClose: true,
-            message: res.data.errmsg,
-            type: "error"
-          });
         } else {
             me.$message({
             showClose: true,
