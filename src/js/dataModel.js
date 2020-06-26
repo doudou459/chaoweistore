@@ -363,4 +363,9 @@ export default class dataModel {
     this.deleteDatas = [];
   }
 
+  clear(){
+    this.datas = [];
+    this.deleteDatas = []; 
+  }
+
 }
